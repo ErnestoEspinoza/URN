@@ -1,5 +1,7 @@
 {
-  "name": "FIMUAS",
-  "integrations": {},
+  "name": "UAS URN",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

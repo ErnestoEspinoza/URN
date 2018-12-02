@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
+  },
+  { path: 'PuntoDeInteres',
+    loadChildren: './pages/punto-de-interes/punto-de-interes.module#PuntoDeInteresPageModule'
   }
+
 ];
 
 @NgModule({
