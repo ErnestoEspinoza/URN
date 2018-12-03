@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>PuntoDeInteres</ion-title>
+    <ion-title>{{facultades[0].nombre}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,12 +8,11 @@
 <h3>Logo de punto de interes:</h3>
 <img src="assets/icon/favicon.png" alt="LOGO UAS">
 <h3>Descripcion:</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-  aliqua. </p>
+<p>{{facultades[0].descripcion}}</p>
 <h3>Horario de atención:</h3>
-<p>7:00am a 6:00pm</p>
+<p>{{facultades[0].horario}}</p>
 <h3>Encargado:</h3>
-<p>Director</p>
+<p>{{facultades[0].encargado}}</p>
 <h3>Turnos:</h3>
-<p>Matutino y Vespertino</p>
+<p>{{facultades[0].turnos}}</p>
 </ion-content>
