@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6 offset-md-3 col-xl-4 offset-xl-4>
+
+        <ion-list>
+
+          <ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
+            <ion-input type="email" placeholder="Correo electrónico" formControlName="email"></ion-input>
+          </ion-item>
+
+          <div ngxErrors="email" #emailErrors="ngxErrors">
+            <div [ngxError]="['email','required']" [when]="['touched', 'dirty']">Ingrese una dirección válida</div>
+          </div>
+
+          <ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+            <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+          </ion-item>
+
+          <div ngxErrors="password" #passwordErrors="ngxErrors">
+            <div [ngxError]="['minlength','required']" [when]="['touched']">Ingrese mínimo 6 caracteres</div>
+          </div>
+
+        </ion-list>
+
+        <div padding-horizontal>
+          <div class="form-error">{{loginError}}</div>
+
+          <button ion-button full type="submit" [disabled]="!loginForm.valid">Iniciar Sesión</button>
+          <div class="login-footer">
+            <p text-center><a href="#">Olvidó su contraseña?</a> Quiere agregar contenido, por favor registrese.</p>
+          </div>
+
+          <ion-list>
+
+
+
+            <!--button ion-button icon-left block clear (click)="loginWithGoogle()">
+                <ion-icon name="logo-google"></ion-icon>
+                Acceso con Google
+              </button-->
+            <button ion-button icon-left block clear (click)="signup()">
+              <ion-icon name="person-add"></ion-icon>
+              Registrarse
+            </button>
+
+          </ion-list>
+
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+</ion-content>
