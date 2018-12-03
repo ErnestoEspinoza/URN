@@ -24,7 +24,13 @@ export class AppComponent {
       title: 'PrepaCU',
       url: '/PuntoDeInteres',
       icon: 'contacts'
-    }
+    },
+    {
+      title: 'FIM',
+      url: '/PuntoDeInteres',
+      icon: 'contacts'
+    },
+ 
   ];
 
   constructor(

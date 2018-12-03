@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 export interface Facultades {
   id?: string;
-  nombre: string;
-  descripcion: string;
-  encargado: string;
-  horario: string;
-  turnos: string;
+  nombre?: string;
+  descripcion?: string;
+  encargado?: string;
+  horario?: string;
+  turnos?: string;
 }
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,7 @@ export class FacultadesService {
     return this.facultades = this.facultadesCollection.snapshotChanges()
       .pipe(map(changes => {
         return changes.map(action => {
-          const data = action.payload.doc.data() as facultades;
+          const data = action.payload.doc.data() as Facultades;
           data.id = action.payload.doc.id;
           return data;
         });
@@ -45,7 +45,7 @@ export class FacultadesService {
     return this.facultadesCollection.doc(id).update(facultades);
   }
   addFacultades(facultades: Facultades){
-    return this.facultadesCollection.add(this.facultades);
+    return this.facultadesCollection.add(facultades);
   }
   removeFacultades(id) {
     return this.facultadesCollection.doc(id).delete();
