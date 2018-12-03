@@ -15,7 +15,7 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-  { path: 'PuntoDeInteres',
+  { path: 'PuntoDeInteres/:id',
     loadChildren: './pages/punto-de-interes/punto-de-interes.module#PuntoDeInteresPageModule'
   }
 
