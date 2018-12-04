@@ -16,13 +16,7 @@ export class AppComponent {
       title: 'Presentación',
       url: '/home',
       icon: 'home'
-    },
-    {
-      title: 'Puntos de interes',
-      url: '/list',
-      icon: 'list'
-    }
- 
+    } 
   ];
 
   constructor(
