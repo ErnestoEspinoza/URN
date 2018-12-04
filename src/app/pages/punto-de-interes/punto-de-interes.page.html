@@ -3,13 +3,16 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{facultad.nombre}}</ion-title>
+    <ion-title>{{facultad.nombre}}
+<ion-buttons class="btnCatalogo" float-right>
+  <ion-icon name="add-circle-outline"></ion-icon>
+</ion-buttons>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-<h3>Logo de punto de interes:</h3>
-<img src="assets/icon/favicon.png" alt="LOGO UAS">
+<img float-right class="LogoUnidad" src="assets/icon/favicon.png" alt="LOGO UAS">
 <h3>Descripcion:</h3>
 <p>{{facultad.descripcion}}</p>
 <h3>Horario de atención:</h3>
@@ -18,4 +21,22 @@
 <p>{{facultad.encargado}}</p>
 <h3>Turnos:</h3>
 <p>{{facultad.turnos}}</p>
+
+<ion-slides pager="true">
+  <ion-slide>
+<img src="http://placehold.it/300x300/cccccc/aaaaaa&amp;text=Ejemplo" height="300" width="300" border="0" style="display: block;border: 1px solid #cccccc;" alt="aaaaaa&amp;text=logo">
+  </ion-slide>
+
+  <ion-slide>
+<img src="http://placehold.it/300x300/cccccc/aaaaaa&amp;text=Ejemplo2" height="300" width="300" border="0" style="display: block;border: 1px solid #cccccc;"
+  alt="aaaaaa&amp;text=logo">
+
+  </ion-slide>
+
+  <ion-slide>
+<img src="http://placehold.it/300x300/cccccc/aaaaaa&amp;text=Ejemplo3" height="300" width="300" border="0" style="display: block;border: 1px solid #cccccc;"
+  alt="aaaaaa&amp;text=logo">
+
+  </ion-slide>
+</ion-slides>
 </ion-content>
