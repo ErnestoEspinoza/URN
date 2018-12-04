@@ -17,7 +17,10 @@ const routes: Routes = [
   },
   { path: 'PuntoDeInteres/:id',
     loadChildren: './pages/punto-de-interes/punto-de-interes.module#PuntoDeInteresPageModule'
-  }
+  },
+  { path: 'Login', loadChildren: './pages/login/login.module#LoginPageModule' },
+  { path: 'Catalogo', loadChildren: './pages/catalogo/catalogo.module#CatalogoPageModule' },
+  { path: 'Registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' }
 
 ];
 

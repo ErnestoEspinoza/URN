@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<form>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6 offset-md-3 col-xl-4 offset-xl-4>
+
+        <ion-list>
+
+          <ion-item>
+            <ion-input type="email" placeholder="Correo electrónico"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input type="password" placeholder="Contraseña"></ion-input>
+          </ion-item>
+
+        </ion-list>
+
+        <div padding-horizontal>
+
+          <button ion-button full type="submit">Iniciar Sesión</button>
+          <div class="login-footer">
+            <p text-center><a href="#">Olvidó su contraseña?</a> Quiere agregar contenido, por favor registrese.</p>
+          </div>
+
+          <ion-list>
+
+
+
+            <!--button ion-button icon-left block clear (click)="loginWithGoogle()">
+                <ion-icon name="logo-google"></ion-icon>
+                Acceso con Google
+              </button-->
+            <button ion-button icon-left block clear>
+              <ion-icon name="person-add"></ion-icon>
+              Registrarse
+            </button>
+
+          </ion-list>
+
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+</ion-content>
