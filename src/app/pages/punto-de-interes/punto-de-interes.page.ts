@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./punto-de-interes.page.scss'],
 })
 export class PuntoDeInteresPage implements OnInit {
-  facultad: Facultades;
+  facultad: Facultades = { nombre: "", id:"", descripcion:"", turnos:"", encargado:""};
   idFacultad: string;
   constructor(private route: ActivatedRoute, private facultadesService: FacultadesService) { }
 
@@ -21,7 +21,7 @@ export class PuntoDeInteresPage implements OnInit {
   loadFacultad(){
     this.facultadesService.getFacultad(this.idFacultad).subscribe(res => {
       this.facultad = res;
-      console.log(this.facultad);
+      
     });
   }
 
