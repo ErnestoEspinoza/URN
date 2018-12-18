@@ -6,8 +6,11 @@
     <ion-title>
       Presentación Hola
 
-<ion-buttons (click)="login()" class="btnLogin" float-right>
-  <ion-icon name="contact"></ion-icon>
+<ion-buttons *ngIf="!isLogged" (click)="login()" class="btnLogin" float-right>
+  <ion-icon name="log-in"></ion-icon>
+</ion-buttons>
+<ion-buttons *ngIf="isLogged" (click)="logout()" class="btnLogout" float-right>
+  <ion-icon name="log-out"></ion-icon>
 </ion-buttons>
 
     </ion-title>
