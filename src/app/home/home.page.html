@@ -6,7 +6,7 @@
     <ion-title>
       Presentación Hola
 
-<ion-buttons class="btnLogin" float-right>
+<ion-buttons (click)="login()" class="btnLogin" float-right>
   <ion-icon name="contact"></ion-icon>
 </ion-buttons>
 
@@ -14,9 +14,7 @@
 
   </ion-toolbar>
 </ion-header>
-
 <ion-content padding>
-  
 <ion-card>
   <ion-img src="/assets/jpg/UAS_rectoria.jpg"></ion-img>
   <ion-card-header>
