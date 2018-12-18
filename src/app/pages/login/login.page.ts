@@ -1,5 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+
+// @Component({
+//   selector: 'app-login',
+//   templateUrl: './login.page.html',
+//   styleUrls: ['./login.page.scss'],
+// })
+// export class LoginPage implements OnInit {
+//   // loginForm: FormGroup;
+//   constructor(public afAuth: AngularFireAuth, private router: Router, private authService: AuthService) { }
+//   public email: string = '';
+//   public password: string = '';
+//   ngOnInit() {
+//   }
+
+//   onLogin(): void {
+//     this.authService.loginEmailUser(this.email, this.password)
+//       .then((res) => {
+//         this.onLoginRedirect();
+//       }).catch(err => console.log('err', err.message));
+//   }
+
+
+//   onLogout() {
+//     this.authService.logoutUser();
+//   }
+//   onLoginRedirect(): void {
+//     this.router.navigate(['/Catalogo']);
+//   }
+
+// }
+
 
 @Component({
   selector: 'app-login',
@@ -7,40 +41,24 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  // loginForm: FormGroup;
 
-  constructor() {
-    // this.loginForm = fb.group({
-    //   email: ['', Validators.compose([Validators.required, Validators.email])],
-		// 	password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
-    // })
-   }
-
+  constructor(public afAuth: AngularFireAuth, private router: Router, private authService: AuthService) { }
+  public email: string = '';
+  public password: string = '';
   ngOnInit() {
   }
 
-  login() {
-    // let data = this.loginForm.value;
-
-    // if (!data.email) {
-    //   return;
-    // }
-
-    // let credentials = {
-    //   email: data.email,
-    //   password: data.password
-    // };
-    // this.auth.signInWithEmail(credentials)
-    //   .then(
-    //     () => this.navCtrl.parent.select(0),
-    //     error => this.loginError = error.message
-    //   );
+  onLogin(): void {
+    this.authService.loginEmailUser(this.email, this.password)
+      .then((res) => {
+        this.onLoginRedirect();
+      }).catch(err => console.log('err', err.message));
   }
 
-  // signup(){
-  //   const myModal = this.modal.create(RegistroPage);
-  //   myModal.onDidDismiss(()=> this.navCtrl.setRoot(PerfilPage) );
-  //   myModal.present();
-  // }
-
+  onLogout() {
+    this.authService.logoutUser();
+  }
+  onLoginRedirect(): void {
+    this.router.navigate(['/Catalogo']);
+  }
 }

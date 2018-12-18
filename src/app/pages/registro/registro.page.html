@@ -5,12 +5,11 @@
 </ion-header>
 
 <ion-content padding>
-
 <ion-content padding class="Registro">
   <ion-grid>
     <ion-row>
       <ion-col col-12 col-md-6 offset-md-3>
-        <form>
+        <form (ngSubmit)="onAddUser()"> 
           <!--<ion-item>
               <ion-label stacked floating>
                 <ion-icon name="contact"></ion-icon> Nombre</ion-label>
@@ -22,7 +21,7 @@
               <ion-label stacked floating>
                 <ion-icon name="mail"></ion-icon>Correo Electrónico
               </ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" name="email" [(ngModel)]="email" required minlength="8"></ion-input>
             </ion-item>
 
 
@@ -30,7 +29,8 @@
               <ion-label stacked floating>
                 <ion-icon name="lock"></ion-icon>Contraseña
               </ion-label>
-              <ion-input type="password"></ion-input>
+              <ion-input type="password" name="password" [(ngModel)]="password" required minlength="5"
+              maxlength="10"></ion-input>
             </ion-item>
 
             <!--<ion-item>
@@ -42,7 +42,7 @@
           </ion-list>
 
           <div padding>
-            <button ion-button block full type="submit"> Registrar</button>
+            <button ion-button block full type="submit" > Registrar</button>
           </div>
         </form>
       </ion-col>

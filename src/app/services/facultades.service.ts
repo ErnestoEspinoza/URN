@@ -18,15 +18,7 @@ export class FacultadesService {
   private facultades: Observable<Facultades[]>
   constructor(db: AngularFirestore) { 
     this.facultadesCollection = db.collection<Facultades>('facultades');
-    this.facultades = this.facultadesCollection.snapshotChanges().pipe(
-      map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data();
-          const id = a.payload.doc.id;
-          return {id, ...data};
-        });
-      })
-    );
+    // this.facultades = this.facultadesCollection.snapshotChanges();
   }
   getFacultades() {
     return this.facultades = this.facultadesCollection.snapshotChanges()

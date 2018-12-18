@@ -16,7 +16,12 @@ const routes: Routes = [
   },
   { path: 'Login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'Catalogo', loadChildren: './pages/catalogo/catalogo.module#CatalogoPageModule' },
-  { path: 'Registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' }
+  { path: 'Registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 
 ];
 
